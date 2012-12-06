@@ -1,5 +1,5 @@
-function AppViewModel() {
-  this.text = ko.observable("Hello World");
-}
-
-ko.applyBindings(new AppViewModel());
+var AppViewModel = {
+    "text": ko.observable("Hello World")
+};
+ko.applyBindings(AppViewModel);
+//@ sourceMappingURL=main.js.map
