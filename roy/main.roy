@@ -4,8 +4,16 @@ let mkPair text =
   }
 
 let mkApp () =
+  let pairs = ko.observableArray [mkPair "Hello", mkPair "World"]
   {
-    pairs: ko.observableArray [mkPair "Hello", mkPair "World"]
+    pairs: pairs
+    
+    new_expr: ko.observable("")
+    new_pair: \() ->
+      let expr = value this.new_expr
+      let pair = mkPair expr
+      pairs.push pair
+      this.new_expr ""
   }
 
-ko.applyBindings (mkApp ())
+ko.applyBindings (value mkApp)
