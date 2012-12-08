@@ -1,0 +1,62 @@
+let mkPair text =
+  {
+    text: ko.observable text
+  }
+
+let mkApp () =
+  let pairs = ko.observableArray [mkPair "Hello world"]
+  {
+    pairs: pairs
+    
+    new_expr: ko.observable("")
+    new_pair: \() ->
+      let expr = this.new_expr ()
+      let pair = mkPair expr
+      pairs.push pair
+      this.new_expr ""
+    
+    check_pair: \pair -> null
+  }
+  //  remove_pair: \pair ->
+  //    if (pairs ()).length > 1
+  //      pairs.remove pair
+  //    else
+  //      pair.text ""
+  //    if pair.text () == "" then this.remove_pair pair else null
+  //    
+  //    let xs = pairs ()
+  //    let last_pair = xs @ (xs.length - 1)
+  //    if last_pair.text ()
+  //  resize: ko.computed (\() ->
+  //    console.log "resize"
+  //    2
+  //    //let xs = pairs ()
+  //    //
+  //    //let last_pair = xs @ (xs.length - 1)
+  //    //let last_text = last_pair.text
+  //    //
+  //    //if last_text != "" then
+  //    //  // expand
+  //    //  console.log "expand"
+  //    //  pairs.push (mkPair "")
+  //    //  true
+  //    //else
+  //    //  if xs.length >= 2 then
+  //    //    let penultimate_pair = xs @ (xs.length - 2)
+  //    //    let penultimate_text = penultimate_pair.text
+  //    //    
+  //    //    if penultimate_text == "" then
+  //    //      // shrink
+  //    //      console.log "shrink"
+  //    //      pairs.remove last_pair
+  //    //      true
+  //    //    else
+  //    //      console.log ("penultimate_text == " ++ penultimate_text)
+  //    //      false
+  //    //  else
+  //    //    console.log ("xs.length < 2")
+  //    //    false
+  //  )
+  //}
+
+ko.applyBindings (mkApp ())

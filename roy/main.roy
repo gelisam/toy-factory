@@ -1,5 +1,11 @@
-let AppViewModel = {
-  text: ko.observable "Hello World"
-}
+let mkPair text =
+  {
+    text: ko.observable text
+  }
 
-ko.applyBindings AppViewModel
+let mkApp () =
+  {
+    pairs: ko.observableArray [mkPair "Hello", mkPair "World"]
+  }
+
+ko.applyBindings (mkApp ())
