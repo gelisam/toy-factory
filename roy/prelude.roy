@@ -1,0 +1,22 @@
+let id x = x
+
+let map f xs =
+  let ys = []
+  let step i =
+    if i == (cast xs).length then
+      ys
+    else
+      let x = xs @ i
+      let y = f x
+      (cast ys).push y
+      step (i + 1)
+  step 0
+
+let fold f y0 xs =
+  let step i y =
+    if i == (cast xs).length then
+      y
+    else
+      let x = xs @ i
+      step (i + 1) (f y x)
+  step 0 y0
