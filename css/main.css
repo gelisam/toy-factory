@@ -39,9 +39,11 @@ input:hover, input:active {
   position: relative;
   left: -9px;
   top: -5px;
+}
+.expected input {
   opacity: 0.0;
 }
-.expected:hover {
+.expected input:hover, .expected input:focus {
   opacity: 1.0;
 }
 .result {
