@@ -13,6 +13,16 @@ var mkApp = function() {
             var pair = mkPair(expr);
             pairs.push(pair);
             return this.new_expr("");
+        },
+        "remove": pairs.remove,
+        "maybe_remove": function(pair) {
+            return (function() {
+                if(value(pair.text) == "") {
+                    return pairs.remove(pair);
+                } else {
+                    return null;
+                }
+            })();
         }
     };
 };

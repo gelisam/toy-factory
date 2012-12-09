@@ -13,10 +13,10 @@
     <noscript>This is a tool for creating toy languages and experimenting with them. Javascript is required.</noscript>
     
     <div class="pairs" data-bind="foreach: pairs">
-      <div class="pair">
+      <form class="pair" data-bind="submit: function() {$parent.maybe_remove($data);}">
         <div class="expr"><input data-bind="value: text"/></div>
         <div class="result" data-bind="text: text"></div>
-      </div>
+      </form>
     </div>
     <form data-bind="submit: new_pair">
       <div class="expr"><input data-bind="value: new_expr"/></div>
