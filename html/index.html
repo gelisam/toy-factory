@@ -15,7 +15,8 @@
     <div class="pairs" data-bind="foreach: pairs">
       <form class="pair" data-bind="submit: function() {$parent.maybe_remove($data);}">
         <div class="expr"><input data-bind="value: text"/></div>
-        <div class="result" data-bind="text: text"></div>
+        <div class="result" data-bind="text: text" readonly="readonly"></div>
+        <div class="expected"><input data-bind="value: text"/></div>
       </form>
     </div>
     <form data-bind="submit: new_pair">

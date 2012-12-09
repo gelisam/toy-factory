@@ -5,7 +5,7 @@ body {
 }
 
 .pair {
-  margin-bottom: 1ex;
+  margin-bottom: -4px;
 }
 input {
   border: 1px solid #FFF;
@@ -30,4 +30,21 @@ input:hover, input:active {
 }
 .expr:before {
   content: "> ";
+}
+
+.expected input, .result input {
+  font-size: 16px;
+}
+.expected {
+  position: relative;
+  left: -9px;
+  top: -5px;
+  opacity: 0.0;
+}
+.expected:hover {
+  opacity: 1.0;
+}
+.result {
+  height: 20px;
+  margin-bottom: -20px;
 }
