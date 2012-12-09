@@ -50,3 +50,7 @@ input:hover, input:active {
   height: 20px;
   margin-bottom: -20px;
 }
+
+.different {
+  color: #B22400;
+}

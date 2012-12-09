@@ -17,7 +17,7 @@
         <form data-bind="submit: function() {$parent.maybe_remove($data);}">
           <div class="expr"><input data-bind="value: expr"/></div>
         </form>
-        <div class="result" data-bind="text: expr"></div>
+        <div class="result" data-bind="text: result, css: {different: result() != expected()}"></div>
         <div class="expected"><input data-bind="value: expected"/></div>
       </div>
     </div>

@@ -1,7 +1,10 @@
 var mkPair = function(text) {
+    var expr = ko.observable(text);
+    var expected = ko.observable(text);
     return {
-        "expr": ko.observable(text),
-        "expected": ko.observable(text)
+        "expr": expr,
+        "expected": expected,
+        "result": expr
     };
 };
 var mkApp = function() {

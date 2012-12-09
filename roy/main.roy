@@ -1,7 +1,11 @@
 let mkPair text =
+  let expr     = ko.observable text
+  let expected = ko.observable text
   {
-    expr: ko.observable text
-    expected: ko.observable text
+    expr: expr
+    expected: expected
+    
+    result: expr
   }
 
 let mkApp () =
