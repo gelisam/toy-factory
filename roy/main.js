@@ -1,6 +1,7 @@
 var mkPair = function(text) {
     return {
-        "text": ko.observable(text)
+        "expr": ko.observable(text),
+        "expected": ko.observable(text)
     };
 };
 var mkApp = function() {
@@ -17,7 +18,7 @@ var mkApp = function() {
         "remove": pairs.remove,
         "maybe_remove": function(pair) {
             return (function() {
-                if(value(pair.text) == "") {
+                if(value(pair.expr) == "") {
                     return pairs.remove(pair);
                 } else {
                     return null;

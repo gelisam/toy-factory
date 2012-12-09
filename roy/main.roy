@@ -1,6 +1,7 @@
 let mkPair text =
   {
-    text: ko.observable text
+    expr: ko.observable text
+    expected: ko.observable text
   }
 
 let mkApp () =
@@ -17,7 +18,7 @@ let mkApp () =
     
     remove: pairs.remove
     maybe_remove: \pair ->
-      if (value pair.text) == "" then pairs.remove pair else null
+      if (value pair.expr) == "" then pairs.remove pair else null
   }
 
 ko.applyBindings (value mkApp)
