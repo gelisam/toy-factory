@@ -13,7 +13,7 @@
     <noscript>This is a tool for creating toy languages and experimenting with them. Javascript is required.</noscript>
     
     <div class="pairs" data-bind="foreach: pairs">
-      <div class="pair" data-bind="css: {selected: $root.selected_pair === $data}">
+      <div class="pair" data-bind="css: {selected: $parent.selected_pair() === $data}, event: {focusin: function() {$parent.select($data)}}">
         <form data-bind="submit: function() {$parent.maybe_remove($data);}">
           <div class="expr"><input data-bind="value: expr"/></div>
         </form>

@@ -10,9 +10,11 @@ var mkPair = function(text) {
 };
 var mkApp = function() {
     var pairs = ko.observableArray([mkPair("Hello"), mkPair("World")]);
+    var selected_pair = ko.observable(null);
     return {
         "pairs": pairs,
-        "selected_pair": value(pairs)[1],
+        "selected_pair": selected_pair,
+        "select": selected_pair,
         "new_expr": ko.observable(("")),
         "new_pair": function() {
             var expr = value(this.new_expr);
