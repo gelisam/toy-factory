@@ -4,13 +4,15 @@ var mkPair = function(text) {
     return {
         "expr": expr,
         "expected": expected,
-        "result": expr
+        "result": expr,
+        "selected": false
     };
 };
 var mkApp = function() {
     var pairs = ko.observableArray([mkPair("Hello"), mkPair("World")]);
     return {
         "pairs": pairs,
+        "selected_pair": value(pairs)[1],
         "new_expr": ko.observable(("")),
         "new_pair": function() {
             var expr = value(this.new_expr);

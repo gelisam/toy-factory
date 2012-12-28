@@ -6,12 +6,14 @@ let mkPair text =
     expected: expected
     
     result: expr
+    selected: false
   }
 
 let mkApp () =
   let pairs = ko.observableArray [mkPair "Hello", mkPair "World"]
   {
     pairs: pairs
+    selected_pair: (value pairs) @ 1
     
     new_expr: ko.observable("")
     new_pair: \() ->
