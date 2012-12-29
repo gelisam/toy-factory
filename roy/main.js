@@ -20,6 +20,7 @@ var mkApp = function() {
             var expr = value(this.new_expr);
             var pair = mkPair(expr);
             pairs.push(pair);
+            this.select(pair);
             return this.new_expr("");
         },
         "remove": pairs.remove,

@@ -24,6 +24,7 @@ let mkApp () =
       let expr = value this.new_expr
       let pair = mkPair expr
       pairs.push pair
+      this.select pair
       this.new_expr ""
     
     remove: pairs.remove
