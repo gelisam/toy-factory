@@ -58,11 +58,23 @@ input:hover, input:active {
 .expected input:hover, .expected input:focus {
   opacity: 1.0;
 }
-.result {
+.pair .result {
   height: 20px;
   margin-bottom: -20px;
 }
 
 .different {
   color: #B22400;
+}
+
+.examples {
+  float: left;
+  padding-right: 4px;
+  border-right: 1px solid black;
+}
+.network {
+  margin-left: -1px;
+  padding-left: 4px;
+  border-left: 1px solid black;
+  float: left;
 }

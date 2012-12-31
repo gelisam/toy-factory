@@ -12,19 +12,20 @@
     <h1>Toy Factory</h1>
     <noscript>This is a tool for creating toy languages and experimenting with them. Javascript is required.</noscript>
     
-    <div class="pairs" data-bind="foreach: pairs">
-      <div class="pair" data-bind="css: {selected: $parent.selected_pair() === $data}, event: {focusin: function() {$parent.select($data)}}">
-        <form data-bind="submit: function() {$parent.maybe_remove($data);}">
-          <div class="expr"><input data-bind="value: expr"/></div>
-        </form>
-        <div class="result" data-bind="text: result, css: {different: result() != expected()}"></div>
-        <div class="expected"><input data-bind="value: expected"/></div>
+    <div class="examples">
+      <div class="pairs" data-bind="foreach: pairs">
+        <div class="pair" data-bind="css: {selected: $parent.selected_pair() === $data}, event: {focusin: function() {$parent.select($data)}}">
+          <form data-bind="submit: function() {$parent.maybe_remove($data);}">
+            <div class="expr"><input data-bind="value: expr"/></div>
+          </form>
+          <div class="result" data-bind="text: result, css: {different: result() != expected()}"></div>
+          <div class="expected"><input data-bind="value: expected"/></div>
+        </div>
       </div>
+      <form class="new_pair" data-bind="submit: new_pair">
+        <div class="expr"><input data-bind="value: new_expr"/></div>
+      </form>
     </div>
-    <form class="new_pair" data-bind="submit: new_pair">
-      <div class="expr"><input data-bind="value: new_expr"/></div>
-    </form>
-    <hr/>
     <div class="network" data-bind="with: selected_pair">
       <div class="expr"><input data-bind="value: expr"/></div>
       <div class="result" data-bind="text: result"></div>
