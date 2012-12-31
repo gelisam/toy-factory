@@ -11,6 +11,8 @@ body {
 }
 .pair.selected {
   border: 2px solid #2F77F5;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
   border-radius: 6px;
 }
 .new_pair {
@@ -77,4 +79,42 @@ input:hover, input:active {
   padding-left: 4px;
   border-left: 1px solid black;
   float: left;
+}
+.network .result {
+  text-align: center;
+}
+
+/* thanks, cssarrowplease.com */
+.arrow_box {
+  position: relative;
+  background: #88b7d5;
+  border: 1px solid #c2e1f5;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  padding: 10px 1.5em 10px 1em;
+  margin-bottom: 10px;
+}
+.arrow_box:after, .arrow_box:before {
+  top: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+.arrow_box:after {
+  border-color: rgba(136, 183, 213, 0);
+  border-top-color: #88b7d5;
+  border-width: 8px;
+  left: 50%;
+  margin-left: -8px;
+}
+.arrow_box:before {
+  border-color: rgba(194, 225, 245, 0);
+  border-top-color: #c2e1f5;
+  border-width: 9px;
+  left: 50%;
+  margin-left: -9px;
 }
