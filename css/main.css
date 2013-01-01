@@ -92,8 +92,8 @@ input:hover, input:active {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  padding: 10px 1.5em 10px 1em;
   margin-bottom: 10px;
+  padding: 10px;
 }
 .arrow_box:after, .arrow_box:before {
   top: 100%;
@@ -117,4 +117,10 @@ input:hover, input:active {
   border-width: 9px;
   left: 50%;
   margin-left: -9px;
+}
+
+/* center the box, not the box-plus-prompt */
+.arrow_box .expr:after {
+  content: "> ";
+  color: transparent;
 }
