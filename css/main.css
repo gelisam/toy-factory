@@ -124,3 +124,16 @@ input:hover, input:active {
   content: "> ";
   color: transparent;
 }
+
+.add_box {
+  display: block;
+  height: 20px;
+  margin-bottom: -20px;
+  text-align: center;
+}
+.add_box:hover:after {
+  position: relative;
+  content: "+";
+  color: #c2e1f5;
+  z-index: 1;
+}
