@@ -13,6 +13,9 @@ let mkPair text =
 let mkApp () =
   let pairs = ko.observableArray [mkPair "Hello", mkPair "World"]
   let selected_pair = ko.observable null
+  
+  let network = ko.observableArray []
+  
   {
     pairs: pairs
     
@@ -26,6 +29,11 @@ let mkApp () =
       pairs.push pair
       this.select pair
       this.new_expr ""
+    
+    network: network
+    add_null: \() ->
+      console.log "null"
+      network.push "null"
     
     remove: pairs.remove
     maybe_remove: \pair ->

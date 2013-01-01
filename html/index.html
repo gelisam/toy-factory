@@ -26,12 +26,16 @@
         <div class="expr"><input data-bind="value: new_expr"/></div>
       </form>
     </div>
-    <div class="network" data-bind="with: selected_pair">
+    <div class="network" data-bind="if: selected_pair">
       <div class="arrow_box">
-        <div class="expr"><input data-bind="value: expr"/></div>
-        <div class="add_box"></div>
+        <div class="expr"><input data-bind="value: selected_pair().expr"/></div>
+        <div class="add_box" data-bind="click: add_null"></div>
       </div>
-      <div class="result" data-bind="text: result"></div>
+      <div class="result" data-bind="text: selected_pair().result"></div>
+      <div data-bind="foreach: network">
+        <div class="arrow_box" data-bind="text: $data"></div>
+        <div class="result" data-bind="text: $parent.selected_pair().result"></div>
+      </div>
     </div>
     
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>

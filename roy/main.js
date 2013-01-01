@@ -11,6 +11,7 @@ var mkPair = function(text) {
 var mkApp = function() {
     var pairs = ko.observableArray([mkPair("Hello"), mkPair("World")]);
     var selected_pair = ko.observable(null);
+    var network = ko.observableArray([]);
     return {
         "pairs": pairs,
         "selected_pair": selected_pair,
@@ -22,6 +23,10 @@ var mkApp = function() {
             pairs.push(pair);
             this.select(pair);
             return this.new_expr("");
+        },
+        "network": network,
+        "add_null": function() {
+            return network.push("null");
         },
         "remove": pairs.remove,
         "maybe_remove": function(pair) {
